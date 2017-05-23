@@ -1,5 +1,7 @@
 package ua.com;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import ua.com.dao.ProductDao;
@@ -26,6 +28,7 @@ import java.sql.*;
 /**
  * Created by User on 18.05.2017.
  */
+
 public class MainApp {
     public static void main(String[] args) throws SQLException {
         Connection connection = null;
@@ -43,6 +46,7 @@ public class MainApp {
         dataSource.setPassword(pass);
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
 
 
         try {
@@ -72,7 +76,7 @@ public class MainApp {
             ProductViewService productViewService = new ProductViewServiceImpl(productViewDao,typeService);
 
 
-            productViewService.deleteProductTypeService(3);
+//            productViewService.deleteProductTypeService(3);
 
 //            ProductTypeDao typeDao = new ProductTypeDaoImpl(jdbcTemplate);
 //            System.out.println(typeDao.getAllTypes());
